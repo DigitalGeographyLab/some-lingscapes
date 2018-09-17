@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import argparse
-import pandas as pd
-
 """
 This script prints out the contents of a Pandas dataframe.
 
@@ -16,6 +13,9 @@ Optional arguments:
 Returns:
     A printout of the dataframe contents.    
 """
+
+import argparse
+import pandas as pd
 
 # Set up the argument parser
 ap = argparse.ArgumentParser()
