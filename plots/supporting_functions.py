@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
 """
-This script includes various supporting functions for analysing and plotting the
-results.
+This file contains supporting functions for diversity analyses and plotting.
 """
 
-# Import the required modules
 import numpy as np
 import pandas as pd
 import pytz
