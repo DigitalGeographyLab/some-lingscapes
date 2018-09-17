@@ -36,8 +36,9 @@ ap.add_argument("-p", "--preprocessing", required=True,
                 help="Selected preprocessing strategy: valid values include "
                      "'no_preprocessing', 'rm_all' and 'rm_trail'.")
 
-# Define
-ap.add_argument("-c", "--column", required=False)
+# Define input column manually
+ap.add_argument("-c", "--column", required=False,
+                help="The name of the column containing the texts to process.")
 
 # Parse arguments
 args = vars(ap.parse_args())
