@@ -14,8 +14,21 @@ Returns:
     allows you to perform language identification using fastText. For more
     details see ../langid.
 """
+import urllib
+import os
 
+# Create path
+print('[INFO] - Creating path...')
+os.makedirs(r"C:\HY-Data\tuomvais\repos\linglandscape\some-lingscapes\"
+            r"langid\models", exist_ok=True)
+print('[INFO] - Path created!')
 
 # Define model URL
 MODEL_URL = "https://s3-us-west-1.amazonaws.com/fasttext-vectors/" \
             "supervised_models/lid.176.bin"
+
+# Download model
+print('[INFO] - Downloading model...')
+urllib.request.urlretrieve(MODEL_URL, r"C:\HY-Data\tuomvais\repos\linglandscape"
+                           r"\some-lingscapes\langid\models\lid.176.bin")
+print('[INFO] - Download complete!')
