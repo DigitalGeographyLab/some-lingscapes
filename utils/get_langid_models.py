@@ -17,10 +17,12 @@ Returns:
 import urllib
 import os
 
+# Setting root directory
+rootdir = os.path.dirname(os.path.dirname(__file__))
+
 # Create path
 print('[INFO] - Creating path...')
-os.makedirs(r"C:\HY-Data\tuomvais\repos\linglandscape\some-lingscapes\"
-            r"langid\models", exist_ok=True)
+os.makedirs(os.path.join(rootdir,'langid\models'), exist_ok=True)
 print('[INFO] - Path created!')
 
 # Define model URL
@@ -29,6 +31,6 @@ MODEL_URL = "https://s3-us-west-1.amazonaws.com/fasttext-vectors/" \
 
 # Download model
 print('[INFO] - Downloading model...')
-urllib.request.urlretrieve(MODEL_URL, r"C:\HY-Data\tuomvais\repos\linglandscape"
-                           r"\some-lingscapes\langid\models\lid.176.bin")
+urllib.request.urlretrieve(MODEL_URL,
+                           os.path.join(rootdir,'langid\models\lid.176.bin'))
 print('[INFO] - Download complete!')
