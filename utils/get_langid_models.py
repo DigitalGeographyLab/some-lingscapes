@@ -22,7 +22,7 @@ import os
 rootdir = os.path.dirname(os.path.dirname(__file__))
 
 # Define target path
-target_path = os.path.join(rootdir, '..', 'langid', 'models')
+target_path = os.path.join(rootdir, 'langid', 'models')
 
 # Print status and create target directory
 print('[INFO] - Creating path ...')
