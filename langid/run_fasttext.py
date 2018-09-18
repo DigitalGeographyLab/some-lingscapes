@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from .supporting_functions import detect_lang
+from supporting_functions import detect_lang
 import argparse
-import fastText
+import fasttext as fastText
 import pandas as pd
 
 """
