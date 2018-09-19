@@ -8,7 +8,7 @@ from nltk.tokenize.punkt import PunktSentenceTokenizer
 from urllib.parse import urlparse
 import emoji
 import re
-
+from langid.langid import LanguageIdentifier, model
 
 # Define the preprocessing function
 def preprocess_caption(row, mode):
@@ -141,3 +141,51 @@ def detect_lang(caption, preprocessing):
 
         # Return languages and probabilities
         return list(zip(languages, probabilities, char_len))
+
+def langid_identify(caption, preprocessing):
+    """Identifies the language of a text using langid.py.
+
+    Args:
+        caption: A string containing UTF-8 encoded text.
+        preprocessing: A string indicating the selected preprocessing strategy.
+                       Valid values include: 'no_preprocessing'
+                       (no preprocessing),  'rm_all' (remove all hashtags) and
+                       'rm_trail' (remove trailing hashtags).
+
+    Returns:
+        Saves the prediction into a column named 'langid' in the pandas
+        DataFrame as a list of three tuples. The three tuple consists of an
+        ISO-639 code, its associated probability and character length of the
+        string input to fastText, e.g. ('en', 0.99999, 21).
+    """
+    # If the caption is None, return None
+    if caption == 'None' or caption is None:
+        return
+
+    # Preprocess the caption
+    caption = preprocess_caption(caption, preprocessing)
+
+    # Perform sentence splitting for any remaining text
+    if len(caption) == 0:
+        return None
+
+    else:
+        # Get sentences
+        sentences = split_sentence(caption)
+
+        # Calculate the character length of each sentence
+        char_len = [len(s) for s in sentences]
+        
+        # Initialize langid.py
+        identifier = LanguageIdentifier.from_modelstring(model, norm_probs=True)
+
+        # Make predictions
+        predictions = [identifier.classify(sent) for sent in sentences]
+            
+        # Get the predicted languages and their probabilities
+        languages = [p[0] for p in predictions]
+        probabilities = [p[1] for p in predictions]
+
+        # Return languages and probabilities
+        return list(zip(languages, probabilities, char_len))
+
