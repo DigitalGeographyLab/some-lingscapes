@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The article is published with an open license (CC BY 4.0) and can be found at the journal website [here](https://doi.org/10.1093/llc/fqy049) and in this repository.
+The article is published with an open license (CC BY 4.0) and can be found at the journal website [here](https://doi.org/10.1093/llc/fqy049) and in this [repository](hiippala-etal-2018.pdf).
 
 The repository is organised into directories, which contain scripts related to various analyses conducted in the article.
 
