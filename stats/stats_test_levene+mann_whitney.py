@@ -1,3 +1,23 @@
+# -*- coding: utf-8 -*-
+
+"""
+This script was used to perform Levene's test and the Mann-Whitney U-test
+between observations in a single DataFrame.
+
+Usage:
+    Execute the script from the command line using the following command:
+
+    python3 stats_test_levene+mann_whitney.py -df input.pkl
+
+Arguments:
+    -df/--dataframe: Path to the pandas DataFrame containing the data.
+
+Output:
+    Results for Levene's test and the Mann-Whitney U-test printed on standard
+    output.
+"""
+
+
 from supporting_functions import extract_timestamps, sort, extract_hourly_activity
 from scipy.stats import levene, mannwhitneyu
 import argparse

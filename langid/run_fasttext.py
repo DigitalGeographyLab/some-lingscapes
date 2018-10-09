@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from supporting_functions import detect_lang
+from supporting_functions import detect_ft
 import argparse
 import fasttext as fastText
 import pandas as pd
@@ -59,14 +59,14 @@ try:
 # Catch the error thrown by a missing model and provide additional instructions
 except ValueError:
     exit("fastText language identification model not found! "
-         "Run ../utils/get_langid_models.py to download the model."
+         "Run ../utils/get_fasttext_modells -al.py to download the model."
          )
 
 # Load the input DataFrame
 input_df = pd.read_pickle(args['input'])
 
 # Perform language identification
-input_df['langid'] = input_df[inputcol].apply(lambda x: detect_lang(x, prep))
+input_df['langid'] = input_df[inputcol].apply(lambda x: detect_ft(x, prep))
 
 # Save DataFrame to disk
 input_df.to_pickle(args['output'])

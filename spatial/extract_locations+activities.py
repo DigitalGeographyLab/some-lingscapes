@@ -125,3 +125,6 @@ for ix, row in input_df.iterrows():
 
 # Save output DataFrame to disk
 output_df.to_pickle(args['output'])
+
+# Print status
+print("[INFO] ... Done.")

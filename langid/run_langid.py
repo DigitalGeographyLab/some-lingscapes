@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from supporting_functions import langid_identify
+from supporting_functions import detect_li
 import argparse
 import pandas as pd
 
@@ -66,11 +66,11 @@ except ImportError:
 input_df = pd.read_pickle(args['input'])
 
 # Inform the user
-print('[INFO] - Using langid.py for language detection can a long time,'
+print('[INFO] Using langid.py for language detection can take a long time, '
       'be patient!')
 
 # Perform language identification
-input_df['langid'] = input_df[inputcol].apply(lambda x: langid_identify(x, prep))
+input_df['langid'] = input_df[inputcol].apply(lambda x: detect_li(x, prep))
 
 # Save DataFrame to disk
 input_df.to_pickle(args['output'])

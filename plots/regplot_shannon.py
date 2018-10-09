@@ -164,5 +164,7 @@ plt.savefig('regplot_shan.pdf', bbox_inches='tight')
 # Show the plot
 plt.show()
 
+# Print status
+print("[INFO] ... Done.")
 
 

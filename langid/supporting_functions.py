@@ -10,6 +10,7 @@ import emoji
 import re
 from langid.langid import LanguageIdentifier, model
 
+
 # Define the preprocessing function
 def preprocess_caption(row, mode):
     """Applies the selected preprocessing steps to the text.
@@ -98,7 +99,7 @@ def split_sentence(caption):
     return sent_tokens
 
 
-def detect_lang(caption, preprocessing):
+def detect_ft(caption, preprocessing):
     """Identifies the language of a text using fastText.
 
     Args:
@@ -142,7 +143,8 @@ def detect_lang(caption, preprocessing):
         # Return languages and probabilities
         return list(zip(languages, probabilities, char_len))
 
-def langid_identify(caption, preprocessing):
+
+def detect_li(caption, preprocessing):
     """Identifies the language of a text using langid.py.
 
     Args:

@@ -103,3 +103,6 @@ for i, (ix, row) in enumerate(input_df.iterrows(), start=1):
 
 # Save output DataFrame to disk
 output_df.to_pickle(args['output'])
+
+# Print status
+print("[INFO] ... Done.")

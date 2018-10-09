@@ -1,9 +1,29 @@
+# -*- coding: utf-8 -*-
+
+"""
+This script was used to perform a Kruskal-Wallis H-test for the number of posts
+in Russian between 2014–2015. It should be easy to adapt for other comparisons
+between two periods of observation.
+
+Usage:
+    Execute the script from the command line using the following command:
+
+    python3 stats_k-w_russian.py -i input.pkl -o output.pkl
+
+Arguments:
+    -df/--dataframe: Path to the pandas DataFrame containing the data.
+    -ft/--fthresh: fastText confidence threshold for including the data.
+    -ct/--cthresh: Character length thredshold for including the data.
+
+Output:
+    Kruskal-Wallis H-statistic printed on standard output.
+"""
+
 from supporting_functions import extract_predictions
 from scipy.stats import kruskal
 import argparse
 import pandas as pd
 import seaborn as sns
-
 
 # Set up the argument parser
 ap = argparse.ArgumentParser()

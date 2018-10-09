@@ -1,5 +1,20 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+
+"""
+This script was used to test whether the hourly observations follow a normal
+distribution.
+
+Usage:
+    Execute the script from the command line using the following command:
+
+    python3 stats_test_normality.py -df input.pkl
+
+Arguments:
+    -df/--dataframe: Path to the pandas DataFrame containing the data.
+
+Output:
+    Results for each hour printed on standard output.
+"""
 
 from scipy import stats
 from supporting_functions import extract_timestamps, sort, \
@@ -36,7 +51,6 @@ post_times = extract_timestamps(df)
 post_times['date'] = post_times.time_created_local.apply(lambda x: x.date())
 
 # Exclude posts made outside certain period of time
-# summertime = [4, 5, 6, 7, 8, 9, 10]
 weekdays = [1, 2, 3, 4, 5]
 weekend = [0, 6]
 
@@ -60,8 +74,10 @@ hourly_posts = np.array(hourly_posts)
 
 # Loop over the observations for each hour
 for h, hour in enumerate(hourly_posts):
+
     # Test whether the hourly sample comes from a normal distribution
     chi_squared, p_value = stats.normaltest(hour)
+
     # Check if p < 0.001
     if p_value < 1e-3:
         print("The sample for hour {} does not come from a normal "
