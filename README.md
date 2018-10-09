@@ -1,4 +1,4 @@
-# A repository for the article "[Exploring the linguistic landscape of geotagged social media content in urban environments](https://doi.org/10.1093/llc/fqy049)" published in [Digital Scholarship in the Humanities](https://academic.oup.com/dsh).
+# A repository for the article "[Exploring the linguistic landscape of geotagged social media content in urban environments](https://doi.org/10.1093/llc/fqy049)" published in [Digital Scholarship in the Humanities](https://academic.oup.com/dsh)
 
 ## Introduction
 
@@ -21,4 +21,4 @@ The scripts are described in greater detail in their respective subfolders.
 
 If you use these scripts in your research, please cite the following reference:
 
-Hiippala, Tuomo, Hausmann, Anna, Tenkanen, Henrikki and Toivonen, Tuuli (2018) Exploring the linguistic landscape of geotagged social media content in urban environments. <i>Digital Scholarship in the Humanities</i>. DOI: 10.1093/llc/fqy049
+Hiippala, Tuomo, Hausmann, Anna, Tenkanen, Henrikki and Toivonen, Tuuli (2018) Exploring the linguistic landscape of geotagged social media content in urban environments. <i>Digital Scholarship in the Humanities</i>. DOI: [10.1093/llc/fqy049](https://doi.org/10.1093/llc/fqy049)
