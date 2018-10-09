@@ -1,6 +1,6 @@
 ## Scripts for analysing user mobility
 
-This directory contains scripts for the mobility of users.
+This directory contains scripts for analysing the mobility of users.
 
 | File | Description |
 | :-------- | :---------- |
