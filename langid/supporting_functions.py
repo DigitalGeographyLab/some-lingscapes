@@ -4,11 +4,25 @@
 This file contains supporting functions for automatic language identification.
 """
 
+from langid.langid import LanguageIdentifier, model
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 from urllib.parse import urlparse
 import emoji
+import fastText
 import re
-from langid.langid import LanguageIdentifier, model
+
+# Attempt to load the fastText language identification model
+try:
+    ft_model = fastText.load_model('models/lid.176.bin')
+
+# Catch the error thrown by a missing model and provide additional instructions
+except ValueError:
+    exit("fastText language identification model not found! "
+         "Run ../utils/get_fasttext_modells -al.py to download the model."
+         )
+
+# Attempt to load langid.py model
+li_model = LanguageIdentifier.from_modelstring(model, norm_probs=True)
 
 
 # Define the preprocessing function
@@ -134,7 +148,7 @@ def detect_ft(caption, preprocessing):
         char_len = [len(s) for s in sentences]
 
         # Make predictions
-        predictions = model.predict(sentences)
+        predictions = ft_model.predict(sentences)
 
         # Get the predicted languages and their probabilities
         languages = [p[0].replace('__label__', '') for p in predictions[0]]
@@ -177,12 +191,9 @@ def detect_li(caption, preprocessing):
 
         # Calculate the character length of each sentence
         char_len = [len(s) for s in sentences]
-        
-        # Initialize langid.py
-        identifier = LanguageIdentifier.from_modelstring(model, norm_probs=True)
 
         # Make predictions
-        predictions = [identifier.classify(sent) for sent in sentences]
+        predictions = [li_model.classify(sent) for sent in sentences]
             
         # Get the predicted languages and their probabilities
         languages = [p[0] for p in predictions]

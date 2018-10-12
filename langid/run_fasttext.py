@@ -2,7 +2,6 @@
 
 from supporting_functions import detect_ft
 import argparse
-import fasttext as fastText
 import pandas as pd
 
 """
@@ -51,16 +50,6 @@ if args['column'] is not None:
     inputcol = args['column']
 else:
     inputcol = 'text'
-
-# Attempt to load the fastText language identification model
-try:
-    model = fastText.load_model('models/lid.176.bin')
-
-# Catch the error thrown by a missing model and provide additional instructions
-except ValueError:
-    exit("fastText language identification model not found! "
-         "Run ../utils/get_fasttext_modells -al.py to download the model."
-         )
 
 # Load the input DataFrame
 input_df = pd.read_pickle(args['input'])
