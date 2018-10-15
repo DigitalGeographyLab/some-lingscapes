@@ -151,8 +151,8 @@ def detect_ft(caption, preprocessing):
         predictions = ft_model.predict_proba(sentences, k=1, normalized=True)
 
         # Get the predicted languages and their probabilities
-        languages = [p[0].replace('__label__', '') for p in predictions[0]]
-        probabilities = [p[0] for p in predictions[1]]
+        languages = [[elem[0] for elem in p] for p in predictions]
+        probabilities = [elem[1] for elem in p] for p in predictions]
 
         # Return languages and probabilities
         return list(zip(languages, probabilities, char_len))
