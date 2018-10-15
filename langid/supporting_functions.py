@@ -13,7 +13,7 @@ import re
 
 # Attempt to load the fastText language identification model
 try:
-    ft_model = fastText.load_model('models/lid.176.bin')
+    ft_model = fastText('models/lid.176.bin')
 
 # Catch the error thrown by a missing model and provide additional instructions
 except ValueError:
