@@ -51,15 +51,6 @@ if args['column'] is not None:
 else:
     inputcol = 'text'
 
-# Initialize the fastText language identification model
-try:
-    import pyfasttext
-
-# Catch the error thrown by missing module and provide additional instructions
-except ImportError:
-    exit("pyfasttext language identification module not found! "
-         "Run pip install pyfasttext to install the module."
-         )
 # Load the input DataFrame
 input_df = pd.read_pickle(args['input'])
 
