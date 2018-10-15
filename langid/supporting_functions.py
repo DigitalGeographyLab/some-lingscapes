@@ -155,7 +155,7 @@ def detect_ft(caption, preprocessing):
         probabilities = [[elem[1] for elem in p] for p in predictions]
 
         # Return languages and probabilities
-        return list(zip(languages, probabilities, char_len))
+        return list(zip(*languages, *probabilities, char_len))
 
 
 def detect_li(caption, preprocessing):
