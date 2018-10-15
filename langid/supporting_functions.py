@@ -8,12 +8,13 @@ from langid.langid import LanguageIdentifier, model
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 from urllib.parse import urlparse
 import emoji
-import pyfasttext as fastText
+import pyfasttext as FastText
 import re
 
 # Attempt to load the fastText language identification model
 try:
-    ft_model = fastText('models/lid.176.bin')
+    ft_model = FastText()
+    ft_model = ft_model.load_model('models/lid.176.bin')
 
 # Catch the error thrown by a missing model and provide additional instructions
 except ValueError:
