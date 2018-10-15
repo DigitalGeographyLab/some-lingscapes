@@ -8,7 +8,7 @@ from langid.langid import LanguageIdentifier, model
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 from urllib.parse import urlparse
 import emoji
-import fastText
+import pyfasttext as fastText
 import re
 
 # Attempt to load the fastText language identification model
