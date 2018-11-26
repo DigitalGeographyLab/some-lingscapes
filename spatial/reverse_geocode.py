@@ -51,6 +51,10 @@ output_df = pd.DataFrame(index=input_df.index)
 # Copy over user identifiers
 output_df['user_id'] = input_df['user_id']
 
+# Create column for history data
+output_df['history'] = None
+output_df['history'] = output_df['history'].astype(object)
+
 # Load Shapefile from Natural Earth into a GeoDataFrame
 countries = gpd.GeoDataFrame.from_file('shapef/ne_10m_admin_0_countries.shp')
 
@@ -72,8 +76,8 @@ for i, (ix, row) in enumerate(input_df.iterrows(), start=1):
 
             # Swap coordinate values and convert to Point for Shapely
             try:
-                point = Point(tuple(reversed((entry[1].point.latitude,
-                                             entry[1].point.longitude))))
+                point = entry[1]
+
             except AttributeError:
                 pass
 
