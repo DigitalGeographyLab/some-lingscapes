@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-This file contains supporting functions for diversity analyses and plotting.
+This file contains supporting functions for stats scripts.
 """
 
 import numpy as np
