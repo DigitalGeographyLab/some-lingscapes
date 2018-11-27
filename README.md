@@ -19,9 +19,9 @@ The scripts are described in greater detail in their respective subfolders.
 
 ## Usage
 
-To use the scripts you need to have Python 3 installed with the required libraries. To install the libraries it's recommended to run `pip install requirements.txt`. About the libraries: __Skbio__ (a library for stats scripts) _doesn't_ work on Windows operating systems and __Pyfasttext__ can be difficult to get to work on Windows operating systems.
+To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and run `pip install requirements.txt` to install the libraries. After installation run the scripts on your data or on the provided dummy dataset in the recommended order. The dummy dataset was created for script testing. It contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
 
-There's a generated dummy dataset included under utils that can be used to test the scripts. The dataset contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
+Compatibility issues: __Skbio__ (a library for plots scripts) _doesn't_ work on Windows operating systems. __Pyfasttext__ can be difficult to get to work on Windows operating systems.
 
 ### Recommended order of running scripts
 1. Langid scripts (and `get_fasttext_model.py` from utils)
