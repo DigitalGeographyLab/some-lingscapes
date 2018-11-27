@@ -90,7 +90,7 @@ for ix, row in input_df.iterrows():
         duration = max(visits[v]) - min(visits[v])
 
         # Convert duration to a human-readable form
-        duration = datetime.timedelta(seconds=duration)
+        #duration = datetime.timedelta(seconds=duration)
 
         # Append duration of stay to the dict (country: duration)
         stays[v] = duration

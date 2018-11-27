@@ -39,7 +39,7 @@ args = vars(ap.parse_args())
 if args['column'] is not None:
     inputcol = args['column']
 else:
-    inputcol = 'time_created_utc'
+    inputcol = 'time_created_local'
 
 # Assign arguments to variables
 print('[INFO] - Reading pickled input dataframe in')
