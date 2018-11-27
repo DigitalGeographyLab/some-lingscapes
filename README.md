@@ -15,7 +15,22 @@ The scripts are described in greater detail in their respective subfolders.
 | [spatial](spatial) | Scripts for analysing user mobility |
 | [stats](stats) | Scripts for statistical analyses |
 | [topics](topics) | Scripts for topic modelling |
-| [utils](utils) | Utility scripts |
+| [utils](utils) | Utility scripts and dummy dataset for testing |
+
+## Usage
+
+To use the scripts you need to have Python 3 installed with the required libraries. To install the libraries it's recommended to run `pip install requirements.txt`. About the libraries: __Skbio__ (a library for stats scripts) _doesn't_ work on Windows operating systems and __Pyfasttext__ can be difficult to get to work on Windows operating systems.
+
+There's a generated dummy dataset included under utils that can be used to test the scripts. The dataset contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
+
+### Recommended order of running scripts
+1. Langid scripts (and `get_fasttext_model.py` from utils)
+2. Spatial scripts (1. `location_history_creator.py`, 2. `reverse_geocode.py`, 3. `extract_locations+activities.py`)
+
+   a. The scripts assume that geographical data are under _geometry_ column as shapely points.
+3. Topics scripts (if required)
+4. Stats scripts
+5. Plots scripts
 
 ## Reference
 
