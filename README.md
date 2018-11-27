@@ -30,7 +30,7 @@ Compatibility issues: __Skbio__ (a library for plots scripts) _doesn't_ work on 
    a. The scripts assume that geographical data are under _geometry_ column as shapely points.
 3. Topics scripts (if required)
 
-   a. Requires a pickle with results from both langid and locations+activities.
+   a. Requires a pickle with results from both _langid_ and _locations+activities_.
 4. Stats scripts
 5. Plots scripts
 
