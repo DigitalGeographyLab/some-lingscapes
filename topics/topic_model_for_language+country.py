@@ -101,7 +101,7 @@ for ix, row in input_df.iterrows():
     if len(preds_list) == 1 and list(preds_list)[0] == args['language']:
 
         # Assign caption to variable
-        caption = row['caption']
+        caption = row['text']
 
         # Convert unicode emoji to shortcode emoji
         caption = emoji.demojize(caption)
