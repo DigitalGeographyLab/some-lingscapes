@@ -19,20 +19,24 @@ The scripts are described in greater detail in their respective subfolders.
 
 ## Usage
 
-To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and run `pip install requirements.txt` to install the libraries. After installation run the scripts on your data or on the provided dummy dataset in the recommended order. The dummy dataset was created for script testing. It contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
+To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and run `pip install requirements.txt` to install the libraries. Topic modelling script requires NLTK's stopwords, after installing requirements.txt run `python -m nltk.downloader stopwords`. After installation run the scripts on your data or on the provided dummy dataset in the recommended order. The dummy dataset was created for script testing. It contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
 
 Compatibility issues: __Skbio__ (a library for plots scripts) _doesn't_ work on Windows operating systems. __Pyfasttext__ can be difficult to get to work on Windows operating systems.
 
 ### Recommended order of running scripts
-1. Langid scripts (and `get_fasttext_model.py` from utils)
-2. Spatial scripts (1. `location_history_creator.py`, 2. `reverse_geocode.py`, 3. `extract_locations+activities.py`)
+In the table below is the recommended order to run the scripts in this repo. The input/ouput names are _examples_, you will have to use the correct names for your data.
 
-   a. The scripts assume that geographical data are under _geometry_ column as shapely points.
-3. Topics scripts (if required)
+| Step | Script | Input | Output |
+|:---|:---|:---|:---|
+|0|get_fasttext_model.py|--|langid/models/lid.176.bin|
+|1|run_fasstext/langid.py|your_data.pkl|lid_data.pkl|
+|2|location_history_creator.py|lid_data.pkl|lh_data.pkl|
+|3|reverse_geocode.py|lh_data.pkl|revgeo_data.pkl|
+|4|extract_languages+activities.py|revgeo_data.pkl|lochist_data.pkl|
+|5|add_location_hist_to_df.py|lochist_data.pkl|joined_data.pkl|
+|6|topic_model_for_language+country.py|joined_data.pkl|topic_data.pkl|
+|7|scripts from stats or plots|topic_data.pkl|outputs vary (images, text)|
 
-   a. Requires a pickle with results from both _langid_ and _locations+activities_.
-4. Stats scripts
-5. Plots scripts
 
 
 ## Reference
