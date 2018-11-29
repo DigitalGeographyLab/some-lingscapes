@@ -33,7 +33,7 @@ In the table below is the recommended order to run the scripts in this repo. The
 |2|[location_history_creator.py](/spatial/location_history_creator.py)|lid_data.pkl|lh_data.pkl|
 |3|[reverse_geocode.py](/spatial/reverse_geocode.py)|lh_data.pkl|revgeo_data.pkl|
 |4|[extract_languages+activities.py](/spatial/extract_languages+activities.py)|revgeo_data.pkl|lochist_data.pkl|
-|5|[add_location_hist_to_df.py](/utils/add_location_hist_to_df.py)|lochist_data.pkl|joined_data.pkl|
+|5|[add_location_hist_to_df.py](/utils/add_location_hist_to_df.py)|lochist_data.pkl + lh_data.pkl|joined_data.pkl|
 |6|[topic_model_for_language+country.py](/topics/topic_model_for_language+country.py)|joined_data.pkl|LaTex table|
 |7|scripts from [stats](/stats) or [plots](/plots)|joined_data.pkl|outputs vary (images, text)|
 
