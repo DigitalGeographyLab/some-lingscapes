@@ -21,7 +21,7 @@ The scripts are described in greater detail in their respective subfolders.
 
 To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and run `pip install requirements.txt` to install the libraries. Topic modelling script requires NLTK's stopwords, after installing requirements.txt run `python -m nltk.downloader stopwords`. After installation run the scripts on your data or on the provided dummy dataset in the recommended order. The dummy dataset was created for script testing. It contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
 
-___Compatibility issues___: Windows compatibility is an issue. __Skbio__ (a library for plots scripts) _doesn't_ work on Windows operating systems. __Pyfasttext__ and its dependencies can be difficult to get to work on Windows operating systems.
+___Compatibility issues___: Windows compatibility is an issue. _Skbio_ (a library for plots scripts) _doesn't_ work on Windows operating systems. _Pyfasttext_ and its dependencies (mainly _cysignals_) can be difficult to get to work on Windows operating systems.
 
 ### Recommended order of running scripts
 In the table below is the recommended order to run the scripts in this repo. The input/ouput names are _examples_, you will have to use the correct names for your data.
