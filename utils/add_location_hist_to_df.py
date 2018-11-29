@@ -46,16 +46,19 @@ input_df = pd.read_pickle(args['input'])
 
 # Load the DataFrame containing the location histories.
 hist_df = pd.read_pickle(args['hist'])
+print('[INFO] - Dataframes loaded, preparing to merge..')
 
 # Join the input and location history DataFrames on column 'user_id', using the
 # keys from the input DataFrame containing all posts. This results in NaN values
 # for users that do not have a location history, which are dropped in the next
 # step.
 joined = pd.merge(input_df, hist_df, how='left', on='user_id')
+print('[INFO] - Merge complete')
 
 # Drop the rows without location history.
 joined = joined.dropna(subset=['prev-locations'])
 
 # Save the resulting DataFrame to disk
+print('[INFO] - Saving ' + args['output'] + ' to disk')
 joined.to_pickle(args['output'])
-
+print('[INFO] - ... Done!')

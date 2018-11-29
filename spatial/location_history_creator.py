@@ -13,6 +13,8 @@ Arguments:
     -o/--output: Path to the output pandas DataFrame containing location
     histories.
     -c/--column: Name of the timestamp column
+    -lt/--localtime: Specify whether local time column is added into
+    dataframe. If local time is not required, don't use -lt flag.
 
 Output:
     A pandas DataFrame containing the location histories of users.
@@ -20,6 +22,7 @@ Output:
 
 import pandas as pd
 import argparse
+import pytz
 
 # Set up the argument parser
 ap = argparse.ArgumentParser()
@@ -31,6 +34,9 @@ ap.add_argument("-o", "--output", required=True,
                 help="Path to the output dataframe with location history.")
 ap.add_argument("-c", "--column", required=False,
                 help="The name of the column containing the UTC timestamp")
+ap.add_argument("-lt", "--localtime", required=False,
+                help="Specify whether time_created_local column is created")
+
 
 # Parse arguments
 args = vars(ap.parse_args())
