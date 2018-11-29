@@ -37,7 +37,7 @@ In the table below is the recommended order to run the scripts in this repo. The
 |6|[topic_model_for_language+country.py](/topics/topic_model_for_language+country.py)|joined_data.pkl|LaTex table|
 |7|scripts from [stats](/stats) or [plots](/plots)|joined_data.pkl|outputs vary (images, text)|
 
-
+In step 1, your input data should be ___a pickled Pandas/GeoPandas DataFrame___ with matching column names from the scripts. 
 
 ## Reference
 
