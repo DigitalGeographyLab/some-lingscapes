@@ -19,9 +19,16 @@ The scripts are described in greater detail in their respective subfolders.
 
 ## Usage
 
-To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and run `pip install requirements.txt` to install the libraries. Topic modelling script requires NLTK's stopwords, after installing requirements.txt run `python -m nltk.downloader stopwords`. After installation run the scripts on your data or on the provided dummy dataset in the recommended order. The dummy dataset was created for script testing. It contains fake captions in ten languages and randomly generated spatio-temporal characteristics. 
+To use the scripts you need to have Python 3 installed with the required libraries. It's recommended to setup a virtual python 3 environment and install the required libraries:
+>`pip install requirements.txt`
 
-___Compatibility issues___: Windows compatibility is an issue. _Skbio_ (a library for plots scripts) _doesn't_ work on Windows operating systems. _Pyfasttext_ and its dependencies (mainly _cysignals_) can be difficult to get to work on Windows operating systems.
+The topic modelling script requires NLTK's stopwords and spaCy's model for english language, after installing requirements.txt run:
+>`python -m nltk.downloader stopwords`
+
+>`python -m spacy download en`
+
+After installation run the scripts on your data or on the provided [dummy dataset](utils/dummydata.pkl) in the recommended order. For more information about the dummy dataset: scroll down and read **About the dummy dataset** section. 
+
 
 ### Recommended order of running scripts
 In the table below is the recommended order to run the scripts in this repo. The input/ouput names are _examples_, you will have to use the correct names for your data.
@@ -38,6 +45,8 @@ In the table below is the recommended order to run the scripts in this repo. The
 |7|scripts from [stats](/stats) or [plots](/plots)|joined_data.pkl|outputs vary (images, text)|
 
 In step 1, your input data should be ___a pickled Pandas/GeoPandas DataFrame___ with matching column names from the scripts. 
+
+___Compatibility issues___: Windows compatibility is an issue. _Skbio_ (a library for plots scripts) _doesn't_ work on Windows operating systems. _Pyfasttext_ and its dependencies (mainly _cysignals_) can be difficult to get to work on Windows operating systems.
 
 ### About the dummy dataset
 
