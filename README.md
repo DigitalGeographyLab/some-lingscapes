@@ -46,11 +46,11 @@ In the table below is the recommended order to run the scripts in this repo. The
 
 In step 1, your input data should be ___a pickled Pandas/GeoPandas DataFrame___ with matching column names from the scripts. 
 
-___Compatibility issues___: Windows compatibility is an issue. _Skbio_ (a library for plots scripts) _doesn't_ work on Windows operating systems. _Pyfasttext_ and its dependencies (mainly _cysignals_) can be difficult to get to work on Windows operating systems.
+___Compatibility issues___: Windows compatibility is an issue. _skbio_ (a library for required for diversity indices) _does not_ work on Windows operating systems. _pyfasttext_ and its dependencies (mainly _cysignals_) can be difficult to get to work on Windows operating systems.
 
 ### About the dummy dataset
 
-The dummy dataset is strictly for script testing purposes. It is a pickled Pandas DataFrame, that contains generated user_ids, photo_ids, caption texts, timestamps and geometries. The caption texts were generated using a Keras RNN and fastText word embeddings from actual Instagram captions from Helsinki. The captions are monolingual and the languages in question are the 10 most frequently used languages in Instagram captions from Helsinki. _User_ids, photo_ids, timestamps_ and _geometries_ are all _randomly generated_ and thus statistical tests on and plotting made with the dummy dataset ___will___ reflect the randomness.
+The dummy dataset is intended strictly for testing the scripts. It is a pickled Pandas DataFrame, which contains dummy user_ids, photo_ids, caption texts, timestamps and geometries. The caption texts were generated using a recurrent neural network implemented in Keras using actual Instagram captions from the Helsinki area as training data. The captions are monolingual and the languages in question are the 10 most frequently used languages in Instagram captions from the Helsinki area. _User_ids, photo_ids, timestamps_ and _geometries_ are all _randomly generated_ and thus statistical tests on and plotting made with the dummy dataset ___will___ reflect the randomness.
 
 
 ## Reference
