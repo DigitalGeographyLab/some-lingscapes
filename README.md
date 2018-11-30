@@ -39,6 +39,11 @@ In the table below is the recommended order to run the scripts in this repo. The
 
 In step 1, your input data should be ___a pickled Pandas/GeoPandas DataFrame___ with matching column names from the scripts. 
 
+### About the dummy dataset
+
+The dummy dataset is strictly for script testing purposes. It is a pickled Pandas DataFrame, that contains generated user_ids, photo_ids, caption texts, timestamps and geometries. The caption texts were generated using a Keras RNN and fastText word embeddings from actual Instagram captions from Helsinki. The captions are monolingual and the languages in question are the 10 most frequently used languages in Instagram captions from Helsinki. _User_ids, photo_ids, timestamps_ and _geometries_ are all _randomly generated_ and thus statistical tests on and plotting made with the dummy dataset ___will___ reflect the randomness.
+
+
 ## Reference
 
 If you use these scripts in your research, please cite the following reference:
