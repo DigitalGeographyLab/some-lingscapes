@@ -57,4 +57,4 @@ The dummy dataset is intended strictly for testing the scripts. It is a pickled 
 
 If you use these scripts in your research, please cite the following reference:
 
-Hiippala, Tuomo, Hausmann, Anna, Tenkanen, Henrikki and Toivonen, Tuuli (2018) Exploring the linguistic landscape of geotagged social media content in urban environments. <i>Digital Scholarship in the Humanities</i>. DOI: [10.1093/llc/fqy049](https://doi.org/10.1093/llc/fqy049)
+Hiippala, Tuomo, Hausmann, Anna, Tenkanen, Henrikki and Toivonen, Tuuli (2019) Exploring the linguistic landscape of geotagged social media content in urban environments. <i>Digital Scholarship in the Humanities</i> 34(2): 290-309. DOI: [10.1093/llc/fqy049](https://doi.org/10.1093/llc/fqy049)
